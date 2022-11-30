@@ -6,7 +6,7 @@
 | :- | :-: | :-: |
 |<p></p><p>**Aktiver Tastkopf**</p>|
 ||
-|<p>![](pic01.png)![](pic02.png)</p><p></p><p></p><p></p>|
+|<p>![](docs/pic01.png)![](docs/pic02.png)</p><p></p><p></p><p></p>|
 ||
 |<p>Projektmitglieder:</p><p>- Joel Rupp</p><p>- Sebastian Mayrhofer</p><p></p><p></p><p></p><p></p><p></p>|
 |**HTL Rankweil**|**4CHEL**|**Schuljahr 2022-23**|
@@ -96,7 +96,7 @@ Bei Active FET-Probes wird an den Eingang ein FET geschaltet, um dadurch extrem 
 Normalerweise wird beim Messen mit dem Oszilloskop immer gegen die Masse des Oszilloskops gemessen. Wenn aber nun zwischen zwei Punkten im Dut gemessen werden soll, hat man ein Problem. Denn nun wird immer einer der beiden Punkte auf die Masse kurzgeschlossen, was sowohl beim DUT als auch beim Messgerät zur Zerstörung führen kann, und somit keine Messung ermöglicht. Hier muss mit einem Differentiellen Tastkopf gemossen werden. Dieser misst die Different zwischen beidem Messpunkten, und liefert so das richtige Signal
 
 
-# ![](pic03.png)
+# ![](docs/pic03.png)
 
 *Blockschaltbild der Schaltung*
 
@@ -106,7 +106,7 @@ Normalerweise wird beim Messen mit dem Oszilloskop immer gegen die Masse des Osz
 
  **Die FET-Eingangsstufe mit Abschwächung**
 
-![](pic04.png)
+![](docs/pic04.png)
 
 Das zu messende Signal kommt von links, und geht über C5 (1pF) in das zweite Gate des FETs hinein. Oben wird über R1 (6k8) und R2 (4k7) die Versorgungsspannung auf ca. 2V geteilt, und über R3 (10M) auf das selbe Gate geleitet. Dadurch wird das Gate etwas „vorgespannt“. Aus der Source kommt dann das Messsignal, mit einem Offset vom ca ~0,8V bis ~0.9V. Dann wird das Signal mit R6 (2R4) und R9 (24R) noch durch 10 geteilt. Über C6 (100nF) und C7 (1nF) wird dann der Offset entfernt, und dieser Teil der Schaltung DC-mäßig abgekoppelt. J1, J5 und J4 sind Testpunkte zum späteren Messen der Schaltung. 
 
@@ -114,7 +114,7 @@ Das zu messende Signal kommt von links, und geht über C5 (1pF) in das zweite Ga
 
 **Die Verstärkung**
 
- ![](pic05.png)
+ ![](docs/pic05.png)
 
 
 
@@ -125,7 +125,7 @@ Von links kommt das Signal, welches aus der Eingangstufe kommt, also zehnfach ab
 
 **Die Differenzierung**
 
- ![](pic06.png)
+ ![](docs/pic06.png)
 
 
 Über R14 (1k) kommt das Signal der Schaltung für die negative Messspitze herein, und über R18 (1k) das für den positiven Teil. Die Schaltung ist als Differenzverstärker aufgebaut, mit keiner Verstärkung für beide Eingänge, da alle Widerstände den gleichen Wert haben. 	
@@ -140,7 +140,7 @@ Die Spannungsversorgung der Schaltung erfolgt über USB-C. Um stabile 5V mit max
 - Es werden 5V benötigt
 - Es werden maximal 1A benötigt
 
-![](pic07.png)![](pic08.png)
+![](docs/pic07.png)![](docs/pic08.png)
 
 
 # **Teil 4 – Simulation**
@@ -154,7 +154,7 @@ Um beim testen der Schaltung keine bösen Überraschungen erleben zu müssen, wu
 # Zeitbereich
 
 ## Eingangssignal:
-![](pic09.png)
+![](docs/pic09.png)
 
 
 Man sieht dass die Signale 180° Phasendifferenz besitzen. 
@@ -162,7 +162,7 @@ Man sieht dass die Signale 180° Phasendifferenz besitzen.
 
 ## Signal nach C1:
 
-![](pic10.png)
+![](docs/pic10.png)
 
 
 
@@ -170,7 +170,7 @@ Das Signal wird mit einem 2.043V Offset belegt, und etwas abgeschwächt. Die Abs
 
 ## Signal nach dem FET:
 
-![](pic11.png)
+![](docs/pic11.png)
 
 
 
@@ -178,14 +178,14 @@ Das Signal wird weiter abgeschwächt. Etwas Offset bleibt bestehen, ca. 970mV.
 
 ## Signal am Eingang des OPs:
 
-![](pic12.png)
+![](docs/pic12.png)
 
 
 Das Signal wurde nun noch etwas weiter abgeschwächt auf ca 10mVPP, und mit einem 2.5V Offset belegt. 
 
 ## Signal nach dem OP:
 
-![](pic13.png)
+![](docs/pic13.png)
 
 
 
@@ -194,7 +194,7 @@ Das Ausgangssignal wurde nun verstärkt. Die Schaltung ist in der Simulation noc
 
 ## Ausgangssignal:
 
-![](pic14.png)
+![](docs/pic14.png)
 
 
 
@@ -204,7 +204,7 @@ Das Ausgangssignal der gesamten Schaltung. Man sieht wieder, wie die Schaltung n
 
 ## Bandbreite
 
-# ![](pic15.png)
+# ![](docs/pic15.png)
 
 
 
@@ -213,16 +213,16 @@ Man kann erkennen dass die Schaltung von 100kHz bis ca 1GHz innerhalb von ±3dB 
 # **Teil 5 - Messung**
 
 # Stromaufnahme
-![](pic16.jpeg)Da uns ein OP fehlte, konnte die Schaltung nur bis zur Differenzierung gemossen werden. Zuerst wurde das Netzgerät auf 5V mit 200mA Strombegrenzung eingestellt, da die geschätzte Stromaufnahme bei etwas über 100mA lag. Die gemossene Stromaufnahme waren 114mA.
+![](docs/pic16.jpeg)Da uns ein OP fehlte, konnte die Schaltung nur bis zur Differenzierung gemossen werden. Zuerst wurde das Netzgerät auf 5V mit 200mA Strombegrenzung eingestellt, da die geschätzte Stromaufnahme bei etwas über 100mA lag. Die gemossene Stromaufnahme waren 114mA.
 
 # Zeitbereich
-![](pic17.png)
+![](docs/pic17.png)
 
 *Dann wurde am negativen Eingang ein 10MHz Signal mit 200mVPP eingespeist.*
 
 Das gelbe Signal ist das Eingangssignal, welches direkt vom Signalgenerator ins Oszilloskop geleitet wurde. Das blaue Signal wurde mit einem 10x Tastkopf gemossen, welcher zwar im Oszilloskop eingestellt wurde, bei der internen Messung des Oszilloskops aber aus unerfindlichen Gründen nicht berücksichtigt wurde. Gemossen wurde direkt vor dem FET. Hier lagen nur noch 20.4mV an. Dies ist eine etwas stärkere Dämpfung als erwartet. 
 
-![](pic18.png)
+![](docs/pic18.png)
 
 *Nach dem FET lagen 5V DC an:* 
 
@@ -240,25 +240,25 @@ Mithilfe eines Netzwerkanalyzers könnte die Bandbreite, als auch die Kennlinie 
 
 #  Schaltplan
 
-![](pic19.png)
+![](docs/pic19.png)
 
 
 # Board Top
-![](pic20.png)
+![](docs/pic20.png)
 
 # Board Bottom
 
-![](pic21.png)
+![](docs/pic21.png)
 
 # BOM
 
-![](pic22.png)
+![](docs/pic22.png)
 
 
 
 
 
 # Gehäuse
-![](pic23.png)![](pic24.png)
+![](docs/pic23.png)![](docs/pic24.png)
 
 
